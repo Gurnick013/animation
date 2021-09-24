@@ -1,0 +1,19 @@
+{
+  "name": "animation",
+  "version": "1.0.0",
+  "description": "animation",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gurnick013/animation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gurnick013/animation/issues"
+  },
+  "homepage": "https://github.com/Gurnick013/animation#readme"
+}
