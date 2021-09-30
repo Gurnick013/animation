@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Six+Caps);
 body {
   font-family: "Gilroy ExtraBold", system-ui, sans-serif;
   font-style: normal;
@@ -18,19 +17,19 @@ body {
 body {
   background: linear-gradient(45deg, #02001f, #1f1b4e);
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: perspective(60rem);
-          transform: perspective(60rem);
+  transform: perspective(60rem);
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .Menu-list {
@@ -42,11 +41,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-weight: 700;
   padding: 0;
 }
@@ -70,11 +69,13 @@ body {
   border-radius: 4px;
   background: #ec296d;
   -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.8s
+    cubic-bezier(0.16, 1.08, 0.38, 0.98);
   transition: -webkit-transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
   transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
-  transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98), -webkit-transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+  transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98),
+    -webkit-transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
   z-index: 1;
 }
 
@@ -100,26 +101,26 @@ body {
 
 .Mask + .Mask span {
   -webkit-transform: translateY(-49%);
-          transform: translateY(-49%);
+  transform: translateY(-49%);
 }
 
 .Menu-list-item:hover .Mask,
 .Menu-list-item:active .Mask {
   color: #fff;
   -webkit-transform: skewX(12deg) translateX(5px);
-          transform: skewX(12deg) translateX(5px);
+  transform: skewX(12deg) translateX(5px);
 }
 
 .Menu-list-item:hover .Mask + .Mask,
 .Menu-list-item:active .Mask + .Mask {
   -webkit-transform: skewX(12deg) translateX(-5px);
-          transform: skewX(12deg) translateX(-5px);
+  transform: skewX(12deg) translateX(-5px);
 }
 
 .Menu-list-item:hover::before,
 .Menu-list-item:active::before {
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .container {
@@ -128,8 +129,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .container-animation {
@@ -142,13 +143,13 @@ body {
   font-size: 4em;
   line-height: 1em;
   -webkit-transform: scale(1, 0.8);
-          transform: scale(1, 0.8);
+  transform: scale(1, 0.8);
   border: var(--border-width) solid transparent;
 }
 
 .container-animation .container-animation__inner {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
   display: inline-block;
   width: 100%;
@@ -163,40 +164,48 @@ body {
   border: solid var(--border-width) transparent;
 }
 
-.container-animation .container-animation__inner:hover, .container-animation .container-animation__inner:focus {
-  -webkit-animation: backG calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
-          animation: backG calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
+.container-animation .container-animation__inner:hover,
+.container-animation .container-animation__inner:focus {
+  -webkit-animation: backG calc(var(--animation-speed) / 5 * 3) forwards
+    ease-in-out;
+  animation: backG calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
   -webkit-animation-delay: calc(var(--animation-speed) / 5 * 2);
-          animation-delay: calc(var(--animation-speed) / 5 * 2);
+  animation-delay: calc(var(--animation-speed) / 5 * 2);
 }
 
-.container-animation:before, .container-animation:after {
+.container-animation:before,
+.container-animation:after {
   content: "";
   position: absolute;
   background: var(--color);
 }
 
-.container-animation:focus:before, .container-animation:hover:before {
+.container-animation:focus:before,
+.container-animation:hover:before {
   -webkit-animation: beforeBorders var(--animation-speed) forwards ease-in-out;
-          animation: beforeBorders var(--animation-speed) forwards ease-in-out;
+  animation: beforeBorders var(--animation-speed) forwards ease-in-out;
 }
 
-.container-animation:focus:after, .container-animation:hover:after {
+.container-animation:focus:after,
+.container-animation:hover:after {
   -webkit-animation: afterBorders var(--animation-speed) forwards ease-in-out;
-          animation: afterBorders var(--animation-speed) forwards ease-in-out;
+  animation: afterBorders var(--animation-speed) forwards ease-in-out;
 }
 
-.container-animation:focus, .container-animation:hover {
+.container-animation:focus,
+.container-animation:hover {
   -webkit-animation: borderColors var(--animation-speed) steps(1) forwards;
-          animation: borderColors var(--animation-speed) steps(1) forwards;
+  animation: borderColors var(--animation-speed) steps(1) forwards;
   outline: none;
 }
 
-.container-animation:focus .border-animation__inner, .container-animation:hover .border-animation__inner {
-  -webkit-animation: backG calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
-          animation: backG calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
+.container-animation:focus .border-animation__inner,
+.container-animation:hover .border-animation__inner {
+  -webkit-animation: backG calc(var(--animation-speed) / 5 * 3) forwards
+    ease-in-out;
+  animation: backG calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
   -webkit-animation-delay: calc(var(--animation-speed) / 5 * 2);
-          animation-delay: calc(var(--animation-speed) / 5 * 2);
+  animation-delay: calc(var(--animation-speed) / 5 * 2);
 }
 
 @-webkit-keyframes backG {
@@ -406,4 +415,4 @@ body {
     border-left-color: var(--color);
   }
 }
-/*# sourceMappingURL=index.css.map */
+
