@@ -3,9 +3,9 @@ let menu = document.querySelectorAll(".Menu-list"),
   w = window.innerWidth,
   h = window.innerHeight;
 console.log(item);
-window.addEventListener("mousemove", (e) => {
-  let offsetX = 0.75 - e.clientX / 1000,
-    offsetY = 0.5 - e.clientY / 1000,
+document.addEventListener("mousemove", (e) => {
+  let offsetX = 0.75 - e.pageX / 1000,
+    offsetY = 0.5 - e.pageY / 1000,
     dx = e.pageX - w / 2,
     dy = e.pageY - h / 2,
     theta = Math.atan2(dy, dx),
@@ -19,7 +19,7 @@ window.addEventListener("mousemove", (e) => {
     "deg) rotateY(" +
     offsetX * (offsetPoster * 2) +
     "deg)";
-  console.log(offsetX, offsetY);
+  
   angle < 0 ? angle + 360 : angle;
 
   menu[0].style.transform = transformPoster;

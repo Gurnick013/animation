@@ -4,7 +4,8 @@
   "description": "animation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "built": ""
+    
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,11 @@
   "homepage": "https://github.com/Gurnick013/animation#readme",
   "dependencies": {
     "sass": "^1.42.1"
-  }
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.6"
+  },
+  "presets": [
+    "@babel/preset-env"
+  ]
 }

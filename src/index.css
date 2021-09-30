@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Six+Caps);
 body {
   font-family: "Gilroy ExtraBold", system-ui, sans-serif;
   font-style: normal;
@@ -40,19 +41,22 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-weight: 700;
+  padding: 0;
 }
 
 .Menu-list-item {
   position: relative;
   color: transparent;
   cursor: pointer;
+  margin: 15px;
+  text-shadow: 5px 1px 5px darkblue;
 }
 
 .Menu-list-item::before {
@@ -64,8 +68,7 @@ body {
   right: -10%;
   height: 4px;
   border-radius: 4px;
-  margin-top: -2px;
-  background: #ff2c75;
+  background: #ec296d;
   -webkit-transform: scale(0);
           transform: scale(0);
   -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
@@ -79,7 +82,7 @@ body {
   display: block;
   position: absolute;
   overflow: hidden;
-  color: #ff2c75;
+  color: #ec296d;
   top: 0;
   height: 49%;
   -webkit-transition: all 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
@@ -117,5 +120,290 @@ body {
 .Menu-list-item:active::before {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container-animation {
+  --border-width: 0.1em;
+  --animation-speed: 0.5s;
+  --color: #426b5b;
+  color: var(--color);
+  position: relative;
+  display: inline-block;
+  font-size: 4em;
+  line-height: 1em;
+  -webkit-transform: scale(1, 0.8);
+          transform: scale(1, 0.8);
+  border: var(--border-width) solid transparent;
+}
+
+.container-animation .container-animation__inner {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-family: "Six Caps", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  padding: 0.2em;
+  background: #111;
+  z-index: 1;
+  border: solid var(--border-width) transparent;
+}
+
+.container-animation .container-animation__inner:hover, .container-animation .container-animation__inner:focus {
+  -webkit-animation: backG calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
+          animation: backG calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
+  -webkit-animation-delay: calc(var(--animation-speed) / 5 * 2);
+          animation-delay: calc(var(--animation-speed) / 5 * 2);
+}
+
+.container-animation:before, .container-animation:after {
+  content: "";
+  position: absolute;
+  background: var(--color);
+}
+
+.container-animation:focus:before, .container-animation:hover:before {
+  -webkit-animation: beforeBorders var(--animation-speed) forwards ease-in-out;
+          animation: beforeBorders var(--animation-speed) forwards ease-in-out;
+}
+
+.container-animation:focus:after, .container-animation:hover:after {
+  -webkit-animation: afterBorders var(--animation-speed) forwards ease-in-out;
+          animation: afterBorders var(--animation-speed) forwards ease-in-out;
+}
+
+.container-animation:focus, .container-animation:hover {
+  -webkit-animation: borderColors var(--animation-speed) steps(1) forwards;
+          animation: borderColors var(--animation-speed) steps(1) forwards;
+  outline: none;
+}
+
+.container-animation:focus .border-animation__inner, .container-animation:hover .border-animation__inner {
+  -webkit-animation: backG calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
+          animation: backG calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
+  -webkit-animation-delay: calc(var(--animation-speed) / 5 * 2);
+          animation-delay: calc(var(--animation-speed) / 5 * 2);
+}
+
+@-webkit-keyframes backG {
+  to {
+    background: #cccccc;
+    text-shadow: 0 0.3em 0.3em #757575;
+  }
+}
+
+@keyframes backG {
+  to {
+    background: #cccccc;
+    text-shadow: 0 0.3em 0.3em #757575;
+  }
+}
+
+@-webkit-keyframes beforeBorders {
+  0% {
+    top: calc(var(--border-width) * -1);
+    left: 50%;
+    bottom: auto;
+    right: auto;
+    width: 0;
+    height: var(--border-width);
+  }
+  33% {
+    top: calc(var(--border-width) * -1);
+    left: calc(var(--border-width) * -1);
+    bottom: auto;
+    right: auto;
+    width: calc(var(--border-width) + 50%);
+    height: var(--border-width);
+  }
+  66% {
+    top: calc(var(--border-width) * -1);
+    left: calc(var(--border-width) * -1);
+    bottom: auto;
+    right: auto;
+    width: var(--border-width);
+    height: calc((var(--border-width) * 2) + 100%);
+  }
+  100% {
+    top: auto;
+    left: calc(var(--border-width) * -1);
+    bottom: calc(var(--border-width) * -1);
+    right: auto;
+    width: calc(var(--border-width) + 50%);
+    height: calc((var(--border-width) * 2) + 100%);
+  }
+}
+
+@keyframes beforeBorders {
+  0% {
+    top: calc(var(--border-width) * -1);
+    left: 50%;
+    bottom: auto;
+    right: auto;
+    width: 0;
+    height: var(--border-width);
+  }
+  33% {
+    top: calc(var(--border-width) * -1);
+    left: calc(var(--border-width) * -1);
+    bottom: auto;
+    right: auto;
+    width: calc(var(--border-width) + 50%);
+    height: var(--border-width);
+  }
+  66% {
+    top: calc(var(--border-width) * -1);
+    left: calc(var(--border-width) * -1);
+    bottom: auto;
+    right: auto;
+    width: var(--border-width);
+    height: calc((var(--border-width) * 2) + 100%);
+  }
+  100% {
+    top: auto;
+    left: calc(var(--border-width) * -1);
+    bottom: calc(var(--border-width) * -1);
+    right: auto;
+    width: calc(var(--border-width) + 50%);
+    height: calc((var(--border-width) * 2) + 100%);
+  }
+}
+
+@-webkit-keyframes afterBorders {
+  0% {
+    top: calc(var(--border-width) * -1);
+    left: auto;
+    bottom: auto;
+    right: 50%;
+    width: 0;
+    height: var(--border-width);
+  }
+  33% {
+    top: calc(var(--border-width) * -1);
+    left: auto;
+    bottom: auto;
+    right: calc(var(--border-width) * -1);
+    width: calc(var(--border-width) + 50%);
+    height: var(--border-width);
+  }
+  66% {
+    top: calc(var(--border-width) * -1);
+    left: auto;
+    bottom: auto;
+    right: calc(var(--border-width) * -1);
+    width: var(--border-width);
+    height: calc((var(--border-width) * 2) + 100%);
+  }
+  100% {
+    top: auto;
+    left: auto;
+    bottom: calc(var(--border-width) * -1);
+    right: calc(var(--border-width) * -1);
+    width: calc(var(--border-width) + 50%);
+    height: calc((var(--border-width) * 2) + 100%);
+  }
+}
+
+@keyframes afterBorders {
+  0% {
+    top: calc(var(--border-width) * -1);
+    left: auto;
+    bottom: auto;
+    right: 50%;
+    width: 0;
+    height: var(--border-width);
+  }
+  33% {
+    top: calc(var(--border-width) * -1);
+    left: auto;
+    bottom: auto;
+    right: calc(var(--border-width) * -1);
+    width: calc(var(--border-width) + 50%);
+    height: var(--border-width);
+  }
+  66% {
+    top: calc(var(--border-width) * -1);
+    left: auto;
+    bottom: auto;
+    right: calc(var(--border-width) * -1);
+    width: var(--border-width);
+    height: calc((var(--border-width) * 2) + 100%);
+  }
+  100% {
+    top: auto;
+    left: auto;
+    bottom: calc(var(--border-width) * -1);
+    right: calc(var(--border-width) * -1);
+    width: calc(var(--border-width) + 50%);
+    height: calc((var(--border-width) * 2) + 100%);
+  }
+}
+
+@-webkit-keyframes borderColors {
+  0% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  33% {
+    border-top-color: var(--color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  66% {
+    border-top-color: var(--color);
+    border-right-color: var(--color);
+    border-bottom-color: transparent;
+    border-left-color: var(--color);
+  }
+  100% {
+    border-top-color: var(--color);
+    border-right-color: var(--color);
+    border-bottom-color: var(--color);
+    border-left-color: var(--color);
+  }
+}
+
+@keyframes borderColors {
+  0% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  33% {
+    border-top-color: var(--color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  66% {
+    border-top-color: var(--color);
+    border-right-color: var(--color);
+    border-bottom-color: transparent;
+    border-left-color: var(--color);
+  }
+  100% {
+    border-top-color: var(--color);
+    border-right-color: var(--color);
+    border-bottom-color: var(--color);
+    border-left-color: var(--color);
+  }
 }
 /*# sourceMappingURL=index.css.map */
